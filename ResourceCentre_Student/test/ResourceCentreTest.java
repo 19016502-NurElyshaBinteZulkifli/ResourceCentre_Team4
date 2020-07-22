@@ -122,7 +122,13 @@ public class ResourceCentreTest {
 	public void doLoanChromebookTest() {
 		//fail("Not yet implemented");
 		// write your code here
+		assertNotNull("Test if there is valid Chromebook arraylist to loan", chromebookList);
+		ResourceCentre.addChromebook(chromebookList, cb1);
+		boolean op01 = ResourceCentre.doLoanChromebook(chromebookList, "CB0011", "21-7-2020");
+		assertEquals(true, op01);
 		
+		boolean op02 = ResourceCentre.doLoanChromebook(chromebookList, "CB0011", "29-7-2020");
+		assertEquals(false, op02);
 	}
 	
 	@Test
